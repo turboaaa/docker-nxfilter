@@ -1,5 +1,5 @@
 # docker-nxfilter
-My take on nxfilter in Docker
+My take on nxfilter in Docker to run without root privileges.
 
 # Instructions
 Standard nxfilter docker container stuff.
