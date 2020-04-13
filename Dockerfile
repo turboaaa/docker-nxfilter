@@ -3,7 +3,7 @@ MAINTAINER Michael Mast
 #Keep base up to date
 RUN yum -y upgrade
 #Import the key and repo for the offical NXFilter supported repo
-RUN rpm --import https://deepwoods.net/repo/deepwoods/RPM-GPG-KEY-deepwoods && rpm -Uhv https://deepwoods.net/repo/deepwoods/deepwoods-release-6-2.noarch.rpm
+RUN rpm --import https://deepwoods.net/repo/deepwoods/RPM-GPG-KEY-deepwoods && rpm -Uhv https://deepwoods.net/repo/deepwoods/deepwoods-release-6-2.noarch.rpm && sed 's/http:\/\/www\./https:\/\//' /etc/yum.repos.d/deepwoods.repo 
 #Install nxfilter 
 RUN yum -y install nxfilter
 #Setup java to run as non-root
