@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:7
 MAINTAINER Michael Mast
 #Keep base up to date
 RUN yum -y upgrade
