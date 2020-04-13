@@ -1,3 +1,4 @@
+#!/bin/bash
 test='/nxfilter/conf'
 
 ##Check if files exist. Create if needed.
