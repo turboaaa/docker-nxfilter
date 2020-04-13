@@ -10,5 +10,7 @@ RUN yum -y install nxfilter
 RUN groupadd -g 54682 nxfilter && useradd -u 54682 -g nxfilter nxfilter && chown -R nxfilter:nxfilter /nxfilter
 RUN find /usr/lib/jvm/ -name 'java*-openjdk-*' -exec /usr/sbin/setcap CAP_NET_BIND_SERVICE=+eip {}/jre/bin/java \;
 RUN find /usr/ -name 'libjli.so' -exec /usr/bin/ln -s {} /usr/lib/ \; && ldconfig
+COPY run.sh /run.sh
+RUN chmod u+x /run.sh
 #Run this sucker!
-CMD su nxfilter /nxfilter/bin/startup.sh
+CMD /run.sh
